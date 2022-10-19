@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header {
+  width: 100%;
+  height: 300px;
+  background-image: url('./chang-duong-Sj0iMtq_Z4w-unsplash.jpg');
+  background-size: cover;
+  background-position: 25% 70%;
+}
+
+.header h1{
+  font-size: 70px;
+}
+
+.form {
+  width: 100%;
+}
