@@ -27,3 +27,12 @@ code {
 .form {
   width: 100%;
 }
+
+.containerAdd{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+

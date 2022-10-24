@@ -30,6 +30,13 @@ class Container extends React.Component {
     this.state = {
       friends: friendList,
     };
+    this.deleteClick = this.deleteClick.bind(this);
+  }
+
+  deleteClick(id) {
+    this.setState({
+      friends: this.state.friends.filter((friend) => friend.id !== id),
+    });
   }
 
   render() {
@@ -51,11 +58,29 @@ class Container extends React.Component {
                   Age: {friend.age} City: {friend.city}
                 </p>
                 <button className="btn btn-primary m-1">Edit</button>
-                <button className="btn btn-danger m-1">Delete</button>
+                <button
+                  className="btn btn-danger m-1"
+                  onClick={() => this.deleteClick(friend.id)}
+                >
+                  Delete
+                </button>
               </div>
             </div>
           ))}
         </div>
+        <form className="containerAdd">
+          <label htmlFor="name">Name: </label>
+          <input id="name" className="m-3 form-control"></input>
+          <label htmlFor="surname">Surname: </label>
+          <input id="surname" className="m-3 form-control"></input>
+          <label htmlFor="city">City: </label>
+          <input id="city" className="m-3 form-control"></input>
+          <label htmlFor="age">Age: </label>
+          <input id="age" className="m-3 form-control"></input>
+          <button type="submit" className="btn btn-success">
+            Submit
+          </button>
+        </form>
       </>
     );
   }
