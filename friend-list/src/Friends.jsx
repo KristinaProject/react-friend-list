@@ -7,6 +7,11 @@ function Container() {
     setFriend(friends.filter((friend) => friend.id !== id));
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    
+  }
+
   return (
     <>
       <div className="container d-flex flex-wrap">
@@ -35,15 +40,15 @@ function Container() {
           </div>
         ))}
       </div>
-      <form className="containerAdd">
+      <form className="containerAdd" onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
-        <input id="name" className="m-3 form-control"></input>
+        <input id="name" className="m-3 form-control" onChange={e => setFriend(e.target.value)}></input>
         <label htmlFor="surname">Surname: </label>
-        <input id="surname" className="m-3 form-control"></input>
+        <input id="surname" className="m-3 form-control" onChange={e => setFriend(e.target.value)}></input>
         <label htmlFor="city">City: </label>
-        <input id="city" className="m-3 form-control"></input>
+        <input id="city" className="m-3 form-control" onChange={e => setFriend(e.target.value)}></input>
         <label htmlFor="age">Age: </label>
-        <input id="age" className="m-3 form-control"></input>
+        <input id="age" className="m-3 form-control" onChange={e => setFriend(e.target.value)}></input>
         <button type="submit" className="btn btn-success">
           Submit
         </button>
