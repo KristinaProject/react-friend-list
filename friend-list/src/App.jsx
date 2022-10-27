@@ -11,6 +11,8 @@ const friendList = [
 
 const initialValues = { firstName: "", lastName: "", age: "", city: "" };
 
+const randomID = () => Math.floor(Math.random() * 100);
+
 export function App() {
   const [friends, setFriend] = useState(friendList);
   const [formSubmit, setFormSubmit] = useState(initialValues);
@@ -27,7 +29,7 @@ export function App() {
       surname: formSubmit.lastName,
       city: formSubmit.city,
       age: formSubmit.age,
-      id: Math.floor(Math.random() * 100),
+      id: randomID(),
     };
 
     setFriend([...friends, newFriend]);
@@ -37,6 +39,8 @@ export function App() {
   const onChange = (event) => {
     const id = event.target.id;
     const value = event.target.value;
+    console.log(id);
+    console.log(value);
 
     setFormSubmit({ ...formSubmit, [id]: value });
   };

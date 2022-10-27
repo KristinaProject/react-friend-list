@@ -1,12 +1,12 @@
 export function Form(props) {
   return (
-    <form className="containerAdd" onSubmit={() => props.handleSubmit()}>
+    <form className="containerAdd" onSubmit={(e) => props.handleSubmit(e)}>
       <label htmlFor="name">Name: </label>
       <input
         id="firstName"
         className="m-3 form-control"
         value={props.firstName}
-        onChange={() => props.onChange()}
+        onChange={(e) => props.onChange(e)}
         type="text"
       ></input>
       <label htmlFor="surname">Surname: </label>
@@ -14,7 +14,7 @@ export function Form(props) {
         id="lastName"
         className="m-3 form-control"
         value={props.lastName}
-        onChange={() => props.onChange()}
+        onChange={(e) => props.onChange(e)}
         type="text"
       ></input>
       <label htmlFor="city">City: </label>
@@ -22,7 +22,7 @@ export function Form(props) {
         id="city"
         className="m-3 form-control"
         value={props.city}
-        onChange={() => props.onChange()}
+        onChange={(e) => props.onChange(e)}
         type="text"
       ></input>
       <label htmlFor="age">Age: </label>
@@ -30,7 +30,7 @@ export function Form(props) {
         id="age"
         className="m-3 form-control"
         value={props.age}
-        onChange={() => props.onChange()}
+        onChange={(e) => props.onChange(e)}
         type="numbers"
       ></input>
       <button type="submit" className="btn btn-success">
