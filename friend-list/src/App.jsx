@@ -33,14 +33,12 @@ export function App() {
     };
 
     setFriend([...friends, newFriend]);
-    setFormSubmit(initialValues);
+    setFormSubmit([...initialValues]);
   };
 
   const onChange = (event) => {
     const id = event.target.id;
     const value = event.target.value;
-    console.log(id);
-    console.log(value);
 
     setFormSubmit({ ...formSubmit, [id]: value });
   };

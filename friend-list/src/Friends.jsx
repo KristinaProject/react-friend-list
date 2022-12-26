@@ -4,7 +4,7 @@ export function Friends(props) {
       <div className="card-body">
         <h5 className="card-title">Name: {props.name}</h5>
         <h6 className="card-subtitle mb-2 text-muted">
-          Surname: {props.surname} id: {props.id}
+          Surname: {props.surname}
         </h6>
         <p className="card-text">
           Age: {props.age} City: {props.city}
