@@ -9,7 +9,14 @@ export function Friends(props) {
         <p className="card-text">
           Age: {props.age} City: {props.city}
         </p>
-        <button className="btn btn-primary m-1">Edit</button>
+        <button
+          type="button"
+          className="btn btn-primary m-1"
+          data-toggle="modal"
+          data-target="#editModal"
+        >
+          Edit
+        </button>
         <button
           className="btn btn-danger m-1"
           onClick={() => props.deleteClick(props.id)}

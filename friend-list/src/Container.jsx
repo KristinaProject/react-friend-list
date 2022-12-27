@@ -1,6 +1,7 @@
 import { Friends } from "./Friends";
 
 export function Container(props) {
+  
   return (
     <>
       <div className="container d-flex flex-wrap">
