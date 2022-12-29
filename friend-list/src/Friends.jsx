@@ -1,4 +1,5 @@
 export function Friends(props) {
+
   return (
     <div key={props.id} className="card m-2 p-2" style={{ width: "18rem" }}>
       <div className="card-body">
@@ -14,6 +15,7 @@ export function Friends(props) {
           className="btn btn-primary m-1"
           data-toggle="modal"
           data-target="#editModal"
+          onClick={props.setShow(true)}
         >
           Edit
         </button>

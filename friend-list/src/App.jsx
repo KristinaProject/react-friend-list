@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Container } from "./Container";
+import { EditModal } from "./EditModal";
 import { Form } from "./Form";
 import { Header } from "./Header";
 
@@ -16,6 +17,7 @@ const randomID = () => Math.floor(Math.random() * 100);
 export function App() {
   const [friends, setFriend] = useState(friendList);
   const [formSubmit, setFormSubmit] = useState(initialValues);
+  const [show, setShow] = useState(true);
 
   const deleteClick = (id) => {
     setFriend(friends.filter((friend) => friend.id !== id));
@@ -48,6 +50,7 @@ export function App() {
       <Header />
       <Container friends={friends} onClick={deleteClick} />
       <Form formSubmit={formSubmit} handleSubmit={handleSubmit} onChange={onChange}/>
+      <EditModal show={show} setShow={setShow} />
     </>
   );
 }
