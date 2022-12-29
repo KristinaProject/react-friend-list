@@ -10,7 +10,13 @@ const friendList = [
   { name: "Molis", surname: "Vidurzemis", age: 1000, city: "Zeme", id: 3 },
 ];
 
-const initialValues = { firstName: "", lastName: "", age: "", city: "" };
+const initialValues = {
+  firstName: "",
+  lastName: "",
+  age: "",
+  city: "",
+  id: "",
+};
 
 const randomID = () => Math.floor(Math.random() * 100);
 
@@ -18,6 +24,8 @@ export function App() {
   const [friends, setFriend] = useState(friendList);
   const [formSubmit, setFormSubmit] = useState(initialValues);
   const [show, setShow] = useState(true);
+  const [editId, setEditId] = useState(null);
+  const [editForm, setEditForm] = useState(initialValues);
 
   const deleteClick = (id) => {
     setFriend(friends.filter((friend) => friend.id !== id));
@@ -45,12 +53,49 @@ export function App() {
     setFormSubmit({ ...formSubmit, [id]: value });
   };
 
+  const cancelEdit = () => {
+    setEditId(null);
+  };
+
+  const editValues = (e, item) => {
+    e.preventDefault();
+    setShow(true);
+    // setEditId(item.id);
+    console.log(item);
+    console.log(item.name);
+    console.log(item.surname);
+    console.log(item.age);
+
+    const values = {
+      name: item.name,
+      surname: item.surname,
+      age: item.age,
+      city: item.city,
+      id: item.id,
+    };
+
+    setEditForm(values);
+  };
+
   return (
     <>
       <Header />
-      <Container friends={friends} onClick={deleteClick} />
-      <Form formSubmit={formSubmit} handleSubmit={handleSubmit} onChange={onChange}/>
-      <EditModal show={show} setShow={setShow} />
+      <Container
+        friends={friends}
+        onClick={deleteClick}
+        editValues={editValues}
+      />
+      <Form
+        formSubmit={formSubmit}
+        handleSubmit={handleSubmit}
+        onChange={onChange}
+      />
+      <EditModal
+        show={show}
+        setShow={setShow}
+        cancelEdit={cancelEdit}
+        data={editForm}
+      />
     </>
   );
 }

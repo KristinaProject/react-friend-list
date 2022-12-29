@@ -4,7 +4,7 @@ export function Form(props) {
       <label htmlFor="name">Name: </label>
       <input
         id="firstName"
-        className="m-3 form-control"
+        className="form-control m-2"
         value={props.firstName}
         onChange={(e) => props.onChange(e)}
         type="text"
@@ -12,7 +12,7 @@ export function Form(props) {
       <label htmlFor="surname">Surname: </label>
       <input
         id="lastName"
-        className="m-3 form-control"
+        className="m-2 form-control"
         value={props.lastName}
         onChange={(e) => props.onChange(e)}
         type="text"
@@ -20,7 +20,7 @@ export function Form(props) {
       <label htmlFor="city">City: </label>
       <input
         id="city"
-        className="m-3 form-control"
+        className="m-2 form-control"
         value={props.city}
         onChange={(e) => props.onChange(e)}
         type="text"
@@ -28,7 +28,7 @@ export function Form(props) {
       <label htmlFor="age">Age: </label>
       <input
         id="age"
-        className="m-3 form-control"
+        className="m-2 form-control"
         value={props.age}
         onChange={(e) => props.onChange(e)}
         type="numbers"

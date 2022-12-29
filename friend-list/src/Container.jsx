@@ -6,13 +6,10 @@ export function Container(props) {
       <div className="container d-flex flex-wrap">
         {props.friends.map((friend) => (
           <Friends
-            name={friend.name}
-            surname={friend.surname}
-            city={friend.city}
-            age={friend.age}
+            friend={friend}
             deleteClick={() => props.onClick(friend.id)}
             key={friend.id}
-            setShow={() => props.setShow}
+            editValues={props.editValues}
           />
         ))}
       </div>

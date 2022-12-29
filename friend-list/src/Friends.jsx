@@ -1,21 +1,21 @@
 export function Friends(props) {
 
   return (
-    <div key={props.id} className="card m-2 p-2" style={{ width: "18rem" }}>
+    <div key={props.friend.id} className="card m-2 p-2" style={{ width: "18rem" }}>
       <div className="card-body">
-        <h5 className="card-title">Name: {props.name}</h5>
+        <h5 className="card-title">Name: {props.friend.name}</h5>
         <h6 className="card-subtitle mb-2 text-muted">
-          Surname: {props.surname}
+          Surname: {props.friend.surname}
         </h6>
         <p className="card-text">
-          Age: {props.age} City: {props.city}
+          Age: {props.friend.age} City: {props.friend.city}
         </p>
         <button
           type="button"
           className="btn btn-primary m-1"
           data-toggle="modal"
           data-target="#editModal"
-          onClick={props.setShow(true)}
+          onClick={(e) => props.editValues(e, props.friend)}
         >
           Edit
         </button>
