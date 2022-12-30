@@ -23,20 +23,16 @@ export function EditModal(props) {
               className="close"
               data-dismiss="modal"
               aria-label="Close"
-              onClick={props.cancelEdit}
             >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div className="modal-body">
-            <form
-              className="editForm"
-              onSubmit={(e) => props.handleSubmit(e)}
-            >
+          <form className="editForm" onSubmit={props.handleSubmitEdit}>
+            <div className="modal-body">
               <label htmlFor="name">Name: </label>
               <input
                 className="form-control"
-                onChange={(e) => props.onChange(e)}
+                onChange={props.onChangeEdit}
                 type="text"
                 value={props.data.name}
                 name="name"
@@ -45,7 +41,7 @@ export function EditModal(props) {
               <input
                 name="surname"
                 className="form-control"
-                onChange={(e) => props.onChange(e)}
+                onChange={props.onChangeEdit}
                 type="text"
                 value={props.data.surname}
               ></input>
@@ -53,7 +49,7 @@ export function EditModal(props) {
               <input
                 name="city"
                 className="form-control"
-                onChange={(e) => props.onChange(e)}
+                onChange={props.onChangeEdit}
                 type="text"
                 value={props.data.city}
               ></input>
@@ -61,25 +57,28 @@ export function EditModal(props) {
               <input
                 name="age"
                 className="form-control"
-                onChange={(e) => props.onChange(e)}
+                onChange={props.onChangeEdit}
                 type="numbers"
                 value={props.data.age}
               ></input>
-            </form>
-          </div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-dismiss="modal"
-              onClick={props.cancelEdit}
-            >
-              Close
-            </button>
-            <button type="submit" className="btn btn-primary">
-              Save changes
-            </button>
-          </div>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                
+              >
+                Save changes
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

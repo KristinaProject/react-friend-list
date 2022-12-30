@@ -23,7 +23,7 @@ const randomID = () => Math.floor(Math.random() * 100);
 export function App() {
   const [friends, setFriend] = useState(friendList);
   const [formSubmit, setFormSubmit] = useState(initialValues);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [editId, setEditId] = useState(null);
   const [editForm, setEditForm] = useState(initialValues);
 
@@ -60,11 +60,7 @@ export function App() {
   const editValues = (e, item) => {
     e.preventDefault();
     setShow(true);
-    // setEditId(item.id);
-    console.log(item);
-    console.log(item.name);
-    console.log(item.surname);
-    console.log(item.age);
+    setEditId(item.id);
 
     const values = {
       name: item.name,
@@ -76,6 +72,32 @@ export function App() {
 
     setEditForm(values);
   };
+
+  const onChangeEdit = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setEditForm({...editForm, [name] : value})
+  }
+  
+  const handleSubmitEdit = (e) => {
+    e.preventDefault();
+
+    const newFriend = {
+      name: editForm.name,
+      surname: editForm.surname,
+      age: editForm.age,
+      city: editForm.city,
+      id: editForm.id,
+    }
+
+    const newData = [...friends];
+    const index = friends.findIndex((item) => item.id === editId);
+    newData[index] = newFriend;
+    setFriend(newData);
+    setEditId(null);
+    setShow(false)
+  } 
 
   return (
     <>
@@ -95,6 +117,8 @@ export function App() {
         setShow={setShow}
         cancelEdit={cancelEdit}
         data={editForm}
+        onChangeEdit={onChangeEdit}
+        handleSubmitEdit={handleSubmitEdit}
       />
     </>
   );
