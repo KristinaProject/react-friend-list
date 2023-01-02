@@ -5,9 +5,9 @@ import { Form } from "./Form";
 import { Header } from "./Header";
 
 const friendList = [
-  { name: "Liza", surname: "Simpsons", age: 8, city: "Kaunas", id: 1 },
-  { name: "Molis", surname: "Vidurzemis", age: 1000, city: "Zeme", id: 2 },
-  { name: "Molis", surname: "Vidurzemis", age: 1000, city: "Zeme", id: 3 },
+  { name: "Loreta", surname: "Simpsons", age: 80, city: "Kaunas", id: 1 },
+  { name: "Laume", surname: "Liepa", age: 70, city: "Panevezys", id: 2 },
+  { name: "Laima", surname: "Ponia", age: 55, city: "Palanga", id: 3 },
 ];
 
 const initialValues = {
