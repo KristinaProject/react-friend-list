@@ -96,8 +96,17 @@ export function App() {
     newData[index] = newFriend;
     setFriend(newData);
     setEditId(null);
-    setShow(false)
-  } 
+    setShow(false);
+    hideModal();
+  }
+
+  const hideModal =() => {
+    document.getElementById('editModal').classList.remove('show', 'd-block');
+    document.getElementById('body').classList.remove('modal-open');
+    document.getElementById('body').classList.add('modal-close')
+
+    document.querySelectorAll(".modal-backdrop").forEach(el => el.classList.remove("modal-backdrop"));
+  }
 
   return (
     <>

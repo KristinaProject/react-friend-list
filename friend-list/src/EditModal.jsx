@@ -1,9 +1,11 @@
+var ReactDOM = require("react-dom");
+
 export function EditModal(props) {
   if (!props.show) {
     return null;
   }
 
-  return (
+  return ReactDOM.createPortal(
     <div
       className="modal fade"
       id="editModal"
@@ -73,7 +75,7 @@ export function EditModal(props) {
               <button
                 type="submit"
                 className="btn btn-primary"
-                
+
               >
                 Save changes
               </button>
@@ -81,6 +83,7 @@ export function EditModal(props) {
           </form>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("modal")
   );
 }
